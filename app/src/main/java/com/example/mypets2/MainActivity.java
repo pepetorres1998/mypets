@@ -1,11 +1,13 @@
 package com.example.mypets2;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.example.mypets2.controllers.DogsController;
 import com.example.mypets2.models.Dog;
@@ -39,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(dogsAdapter);
 
         refreshPetsList();
+
+        // float button listener
+        fabAddDog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // it just changes activity
+                Intent intent = new Intent(MainActivity.this, AddDogActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
