@@ -19,7 +19,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL(
                 String.format(
-                        "CREATE TABLE IF NOT EXIST %s(id integer primary key autoincrement, name text, age int)",
+                        "CREATE TABLE IF NOT EXISTS %s(id integer primary key autoincrement, name text, age int)",
                         this.tableName
                 )
         );
