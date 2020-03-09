@@ -48,7 +48,13 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-
+                // go to EditDogActivity.java
+                Dog dogSelected = dogsList.get(position);
+                Intent intent = new Intent(MainActivity.this, EditDogActivity.class);
+                intent.putExtra("dogId", dogSelected.getId());
+                intent.putExtra("dogName", dogSelected.getName());
+                intent.putExtra("dogAge", dogSelected.getAge());
+                startActivity(intent);
             }
 
             @Override
