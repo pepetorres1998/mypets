@@ -1,7 +1,9 @@
 package com.example.mypets2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -41,6 +43,38 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(dogsAdapter);
 
         refreshPetsList();
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(),
+                recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+                final Dog dogToDelete = dogsList.get(position);
+                AlertDialog alertDialog = new AlertDialog
+                        .Builder(MainActivity.this)
+                        .setPositiveButton("Sí, eliminar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dogsController.deleteDog(dogToDelete);
+                                refreshPetsList();
+                            }
+                        })
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .setTitle("Confirmar")
+                        .setMessage("¿Eliminar a la mascota " + dogToDelete.getName() + "?")
+                        .create();
+                alertDialog.show();
+            }
+        }));
 
         // float button listener
         fabAddDog.setOnClickListener(new View.OnClickListener() {
