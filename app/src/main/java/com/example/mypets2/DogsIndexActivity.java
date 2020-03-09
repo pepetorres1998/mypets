@@ -17,7 +17,7 @@ import com.example.mypets2.models.Dog;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class DogsIndexActivity extends AppCompatActivity {
     private List<Dog> dogsList;
     private RecyclerView recyclerView;
     private DogAdapter dogsAdapter;
@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dogs_index);
 
-        dogsController = new DogsController(MainActivity.this);
+        dogsController = new DogsController(DogsIndexActivity.this);
 
         recyclerView = findViewById(R.id.recyclerViewPets);
         fabAddDog = findViewById(R.id.fabAddPet);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view, int position) {
                 // go to EditDogActivity.java
                 Dog dogSelected = dogsList.get(position);
-                Intent intent = new Intent(MainActivity.this, EditDogActivity.class);
+                Intent intent = new Intent(DogsIndexActivity.this, EditDogActivity.class);
                 intent.putExtra("dogId", dogSelected.getId());
                 intent.putExtra("dogName", dogSelected.getName());
                 intent.putExtra("dogAge", dogSelected.getAge());
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onLongClick(View view, int position) {
                 final Dog dogToDelete = dogsList.get(position);
                 AlertDialog alertDialog = new AlertDialog
-                        .Builder(MainActivity.this)
+                        .Builder(DogsIndexActivity.this)
                         .setPositiveButton("Sí, eliminar", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // it just changes activity
-                Intent intent = new Intent(MainActivity.this, AddDogActivity.class);
+                Intent intent = new Intent(DogsIndexActivity.this, AddDogActivity.class);
                 startActivity(intent);
             }
         });
