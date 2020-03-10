@@ -16,13 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddDogActivity" />
-        <activity android:name=".AddCatActivity" />
-        <activity android:name=".EditDogActivity" />
-        <activity android:name=".EditCatActivity" />
+        <activity android:name=".AddDogActivity" android:label="Perritos" />
+        <activity android:name=".AddCatActivity" android:label="Michitos" />
+        <activity android:name=".EditDogActivity" android:label="Perritos" />
+        <activity android:name=".EditCatActivity" android:label="Michitos" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".DogsIndexActivity" />
-        <activity android:name=".CatsIndexActivity" />
+        <activity android:name=".DogsIndexActivity" android:label="Perritos" />
+        <activity android:name=".CatsIndexActivity" android:label="Michitos" />
     </application>
 
 </manifest>
