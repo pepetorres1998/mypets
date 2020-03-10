@@ -19,6 +19,7 @@
         <activity android:name=".AddDogActivity" />
         <activity android:name=".AddCatActivity" />
         <activity android:name=".EditDogActivity" />
+        <activity android:name=".EditCatActivity" />
     </application>
 
 </manifest>

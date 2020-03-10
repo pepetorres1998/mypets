@@ -48,7 +48,12 @@ public class CatsIndexActivity extends AppCompatActivity {
                 recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-
+                Cat catSelected = catsList.get(position);
+                Intent intent = new Intent(CatsIndexActivity.this, EditCatActivity.class);
+                intent.putExtra("catId", catSelected.getId());
+                intent.putExtra("catName", catSelected.getName());
+                intent.putExtra("catAge", catSelected.getAge());
+                startActivity(intent);
             }
 
             @Override
