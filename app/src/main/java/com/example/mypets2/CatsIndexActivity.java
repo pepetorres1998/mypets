@@ -49,7 +49,7 @@ public class CatsIndexActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // it just changes activity
-                Intent intent = new Intent(CatsIndexActivity.this, AddDogActivity.class);
+                Intent intent = new Intent(CatsIndexActivity.this, AddCatActivity.class);
                 startActivity(intent);
             }
         });
