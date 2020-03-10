@@ -42,5 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Salir"
         android:id="@+id/btnDogExit"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_gravity="bottom"/>
 </android.support.design.widget.CoordinatorLayout>
