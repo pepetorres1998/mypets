@@ -10,6 +10,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.mypets2.controllers.DogsController;
 import com.example.mypets2.models.Dog;
@@ -23,6 +24,7 @@ public class DogsIndexActivity extends AppCompatActivity {
     private DogAdapter dogsAdapter;
     private DogsController dogsController;
     private FloatingActionButton fabAddDog;
+    private Button btnExit;
 
 
     @Override
@@ -34,6 +36,7 @@ public class DogsIndexActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewPets);
         fabAddDog = findViewById(R.id.fabAddPet);
+        btnExit = findViewById(R.id.btnDogExit);
 
         dogsList = new ArrayList<>();
         dogsAdapter = new DogAdapter(dogsList);
@@ -116,6 +119,13 @@ public class DogsIndexActivity extends AppCompatActivity {
                         .create()
                         .show();
                 return false;
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

@@ -10,6 +10,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.mypets2.controllers.CatsController;
 import com.example.mypets2.models.Cat;
@@ -23,6 +24,7 @@ public class CatsIndexActivity extends AppCompatActivity {
     private CatAdapter catsAdapter;
     private CatsController catsController;
     private FloatingActionButton fabAddCat;
+    private Button btnExit;
 
 
     @Override
@@ -34,6 +36,7 @@ public class CatsIndexActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewCats);
         fabAddCat = findViewById(R.id.fabAddCat);
+        btnExit = findViewById(R.id.btnCatExit);
 
         catsList = new ArrayList<>();
         catsAdapter = new CatAdapter(catsList);
@@ -115,6 +118,13 @@ public class CatsIndexActivity extends AppCompatActivity {
                         .create()
                         .show();
                 return false;
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
