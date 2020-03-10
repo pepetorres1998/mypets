@@ -27,6 +27,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                         "CREATE TABLE IF NOT EXISTS cats(id integer primary key autoincrement, name text, age int)"
                 )
         );
+        db.execSQL(
+                String.format(
+                        "CREATE TABLE IF NOT EXISTS users(id integer primary key autoincrement, email text unique, password text)"
+                )
+        );
     }
 
     @Override
