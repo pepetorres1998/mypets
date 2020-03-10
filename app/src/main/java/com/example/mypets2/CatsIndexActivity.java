@@ -44,6 +44,38 @@ public class CatsIndexActivity extends AppCompatActivity {
 
         refreshPetsList();
 
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(),
+                recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+                final Cat catToDelete = catsList.get(position);
+                AlertDialog alertDialog = new AlertDialog
+                        .Builder(CatsIndexActivity.this)
+                        .setPositiveButton("Sí, eliminar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                catsController.deleteCat(catToDelete);
+                                refreshPetsList();
+                            }
+                        })
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .setTitle("Confirmar")
+                        .setMessage("¿Eliminar a la mascota " + catToDelete.getName() + "?")
+                        .create();
+                alertDialog.show();
+            }
+        }));
+
         // float button listener
         fabAddCat.setOnClickListener(new View.OnClickListener() {
             @Override
