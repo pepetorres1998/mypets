@@ -91,6 +91,33 @@ public class DogsIndexActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        fabAddDog.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                new AlertDialog.Builder(DogsIndexActivity.this)
+                        .setTitle("Cambiar a Michitos")
+                        .setMessage("¿Seguro que quiere cambiar a la lista de Michitos?")
+                        .setPositiveButton("Sí, cambiar a michitos", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(
+                                        DogsIndexActivity.this, CatsIndexActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .create()
+                        .show();
+                return false;
+            }
+        });
     }
 
     @Override
