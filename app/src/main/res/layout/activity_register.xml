@@ -1,0 +1,76 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    tools:context = ".RegisterActivity">
+
+    <TextView android:text = "Sign Up" android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/tvRegister"
+        android:textSize = "35dp"
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true" />
+
+    <EditText
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/etRegisterEmail"
+        android:hint = "Correo electronico"
+        android:focusable = "true"
+        android:textColorHighlight = "@color/colorAccent"
+        android:textColorHint = "@color/colorPrimary"
+        android:layout_marginTop = "46dp"
+        android:layout_below = "@+id/ivRegister"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivRegister"
+        android:src="@drawable/logo_img"
+        android:layout_below="@+id/tvRegister"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/etRegisterPassword"
+        android:layout_below="@+id/etRegisterEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/etRegisterEmail"
+        android:layout_alignEnd="@+id/etRegisterEmail"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Contraseña" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/btnRegister"
+        android:layout_below="@+id/etRegisterPassword"
+        android:layout_marginTop="30dp"
+        android:layout_toLeftOf="@+id/tvRegister"
+        android:layout_toStartOf="@+id/tvRegister" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/btnCancelRegister"
+        android:layout_below="@+id/etRegisterPassword"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/tvRegister"
+        android:layout_toEndOf="@+id/tvRegister" />
+
+</RelativeLayout>
