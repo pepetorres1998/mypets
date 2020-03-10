@@ -1,0 +1,85 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    tools:context = ".LoginActivity">
+
+    <TextView android:text = "Login" android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/tvLogin"
+        android:textSize = "35dp"
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true" />
+
+    <EditText
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/etEmail"
+        android:hint = "Correo electronico"
+        android:focusable = "true"
+        android:textColorHighlight = "@color/colorAccent"
+        android:textColorHint = "@color/colorPrimary"
+        android:layout_marginTop = "46dp"
+        android:layout_below = "@+id/imageView"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/logo_img"
+        android:layout_below="@+id/tvLogin"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/etPassword"
+        android:layout_below="@+id/etEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/etEmail"
+        android:layout_alignEnd="@+id/etEmail"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Contraseña" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:id="@+id/btnLogin"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginTop="30dp"
+        android:layout_toLeftOf="@+id/tvLogin"
+        android:layout_toStartOf="@+id/tvLogin" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrate"
+        android:id="@+id/btnLoginRegister"
+        android:layout_below="@+id/btnLogin"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/btnCancelLogin"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/tvLogin"
+        android:layout_toEndOf="@+id/tvLogin" />
+
+</RelativeLayout>
